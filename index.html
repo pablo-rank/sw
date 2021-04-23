@@ -6,6 +6,7 @@
     <link href="style.css" rel="stylesheet">
     <script src="index.js" defer></script>
     <link rel="manifest" href="manifest.webmanifest">
+    <link rel="manifest" href="https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs">
   </head>
   <body>
     <img src="images/fox1.jpg" alt="a foxy picture">
@@ -14,7 +15,7 @@
 
     <script type="module">
     // This code sample uses features introduced in Workbox v6.
-    import {Workbox, messageSkipWaiting} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs';
+    //import {Workbox, messageSkipWaiting} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs';
 
     if ('serviceWorker' in navigator) {
       const wb = new Workbox('/sw.js');
