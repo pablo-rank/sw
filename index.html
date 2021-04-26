@@ -16,6 +16,7 @@
     import {Workbox, messageSW} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs';
 
     if ('serviceWorker' in navigator) {
+      console.log("·djdjd");
       const wb = new Workbox('/sw.js');
       let registration;
 
