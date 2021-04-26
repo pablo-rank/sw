@@ -10,6 +10,6 @@
     }
   ],
   "name": "Testing SW",
-  "short_name": "testing"
+  "short_name": "testing",
   "start_url": "index.html"
 }
