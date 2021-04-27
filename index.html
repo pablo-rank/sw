@@ -17,10 +17,7 @@
     import {Workbox, messageSW} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs';
 
     if ('serviceWorker' in navigator) {
-      console.log("·djdjd");
       const wb = new Workbox('/sw.js');
-      console.log("wb is ok   -->>  " + wb);
-      let registration;
 
       const showSkipWaitingPrompt = (event) => {
         console.log("inside");
@@ -34,9 +31,9 @@
         // that a user can either accept or reject.
         result = window.confirm("message");
         if (result) {
-          wb.addEventListener('controlling', (event) => {
+          //wb.addEventListener('controlling', (event) => {
             window.location.reload();
-          });
+          //});
         }
         else {
           if (!result) {
@@ -48,9 +45,7 @@
       // Add an event listener to detect when the registered
       // service worker has installed but is waiting to activate.
       wb.addEventListener('waiting', showSkipWaitingPrompt);
-console.log("wautung");
       wb.register();
-      console.log("registereeeed");
      }
     </script>
   </body>

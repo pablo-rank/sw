@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs');
 
 const OFFLINE_HTML = './offline.html';
 const PRECACHE = [
@@ -18,7 +18,8 @@ const PRECACHE = [
  * Precache Manifest for resources available offline.
  * https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list
  */
-workbox.precaching.precacheAndRoute(PRECACHE);
+//workbox.precaching.precacheAndRoute(PRECACHE);
+workbox.precaching.precacheAndRoute([self.__WB_MANIFEST, PRECACHE].join() || []);
 
 /**
  * Enable navigation preload.
