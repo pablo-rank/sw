@@ -1,16 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js');
 
-const OFFLINE_HTML = '/offline.html';
+const OFFLINE_HTML = './offline.html';
 const PRECACHE = [
-       './',
-       './index.html',
-       './index.js',
-       './style.css',
-       './images/fox1.jpg',
-       './images/fox2.jpg',
-       './images/fox3.jpg',
-       './images/fox4.jpg',
-       './images/fox5.jpg'
     { url: OFFLINE_HTML, revision: '70f044fda3e9647a98f084763ae2c32a' },
     { url: './' },
     { url: './index.html' },
