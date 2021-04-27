@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-window.prod.mjs');
 
 const OFFLINE_HTML = './offline.html';
 const PRECACHE = [
