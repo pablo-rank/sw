@@ -6,7 +6,7 @@
     <link href="style.css" rel="stylesheet">
     <script src="index.js" defer></script>
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="manifest" type="module" href="https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs">
+    <link rel="manifest" href="https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs">
   </head>
   <body>
     <img src="images/fox1.jpg" alt="a foxy picture">
@@ -22,6 +22,7 @@
       let registration;
 
       const showSkipWaitingPrompt = (event) => {
+        console.log("inside");
         // `event.wasWaitingBeforeRegister` will be false if this is
         // the first time the updated service worker is waiting.
         // When `event.wasWaitingBeforeRegister` is true, a previously
@@ -46,8 +47,9 @@
       // Add an event listener to detect when the registered
       // service worker has installed but is waiting to activate.
       wb.addEventListener('waiting', showSkipWaitingPrompt);
-
+console.log("wautung");
       wb.register();
+      console.log("registereeeed");
      }
     //   const showSkipWaitingPrompt = (event) => {
     //     // `event.wasWaitingBeforeRegister` will be false if this is
