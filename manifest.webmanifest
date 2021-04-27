@@ -1,15 +1,18 @@
 {
-  "background_color": "green",
-  "description": "Let's test x2",
+  "name": "pwa name",
+  "short_name": "short",
+  "background_color": "#280036",
+  "description": "this is the description",
   "display": "fullscreen",
+  "theme_color": "#1c0030",
+  "lang": "es",
+  "start_url": "/?utm_source=pwa",
   "icons": [
     {
       "src": "icon/fox-icon.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "name": "Testing SW",
-  "short_name": "testing",
-  "start_url": "index.html"
+  ]
 }
