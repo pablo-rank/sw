@@ -31,7 +31,7 @@
 
         // Assumes your app has some sort of prompt UI element
         // that a user can either accept or reject.
-        result = window.confirm(message);
+        result = window.confirm("message");
         if (result) {
           wb.addEventListener('controlling', (event) => {
             window.location.reload();
