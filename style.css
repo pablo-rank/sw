@@ -9,8 +9,9 @@ body {
 }
 
 img {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 15%;
+  height: auto;
 }
 
 .add-button {
