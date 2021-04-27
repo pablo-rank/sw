@@ -10,17 +10,17 @@
     <link rel="manifest" href="https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs">
   </head>
   <body>
-    <img src="images/fox1.jpg" alt="a foxy picture">
-    <img src="images/fox2.jpg" alt="a foxy picture">
-    <img src="images/fox3.jpg" alt="a foxy picture">
-    <img src="images/fox4.jpg" alt="a foxy picture">
-    <img src="images/fox5.jpg" alt="a foxy picture">
+    <img src="images/fox1.jpg" alt="a foxy picture1">
+    <img src="images/fox2.jpg" alt="a foxy picture2">
+    <img src="images/fox3.jpg" alt="a foxy picture3">
+    <img src="images/fox4.jpg" alt="a foxy picture4">
+    <img src="images/fox5.jpg" alt="a foxy picture5">
     <button class="add-button">Add to home screen</button>
 
 
     <script type="module">
       // This code sample uses features introduced in Workbox v6.
-      import {Workbox, messageSW} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-window.prod.mjs';
+      import {Workbox, messageSkipWaiting} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-window.prod.mjs';
 
       if ('serviceWorker' in navigator) {
         const wb = new Workbox('/sw.js');
@@ -35,7 +35,7 @@
 
           // Assumes your app has some sort of prompt UI element
           // that a user can either accept or reject.
-          
+
           result = window.confirm("message");
           if (result) {
             //wb.addEventListener('controlling', (event) => {
