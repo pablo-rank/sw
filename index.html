@@ -20,7 +20,7 @@
 
     <script type="module">
       // This code sample uses features introduced in Workbox v6.
-      import {Workbox, messageSkipWaiting} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-window.prod.mjs';
+      import {Workbox, messageSW} from 'https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-window.prod.mjs';
 
       if ('serviceWorker' in navigator) {
         const wb = new Workbox('/sw.js');
@@ -44,7 +44,7 @@
                 window.location.reload();
               });
 
-              messageSW();
+              messageSkipWaiting();
             },
 
             onReject: () => {
