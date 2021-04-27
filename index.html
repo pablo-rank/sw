@@ -35,22 +35,18 @@
 
           // Assumes your app has some sort of prompt UI element
           // that a user can either accept or reject.
-          const prompt = createUIPrompt({
-            onAccept: () => {
-              // Assuming the user accepted the update, set up a listener
-              // that will reload the page as soon as the previously waiting
-              // service worker has taken control.
-              wb.addEventListener('controlling', (event) => {
-                window.location.reload();
-              });
-
-              messageSkipWaiting();
-            },
-
-            onReject: () => {
-              prompt.dismiss();
+          
+          result = window.confirm("message");
+          if (result) {
+            //wb.addEventListener('controlling', (event) => {
+              window.location.reload();
+            //});
+          }
+          else {
+            if (!result) {
+              console.log("ko");
             }
-          });
+          }
         };
 
         // Add an event listener to detect when the registered
