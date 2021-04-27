@@ -1,2 +1,32 @@
-if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let r=Promise.resolve();return i[e]||(r=new Promise((async r=>{if("document"in self){const i=document.createElement("script");i.src=e,document.head.appendChild(i),i.onload=r}else importScripts(e),r()}))),r.then((()=>{if(!i[e])throw new Error(`Module ${e} didn’t register its module`);return i[e]}))},r=(r,i)=>{Promise.all(r.map(e)).then((e=>i(1===e.length?e[0]:e)))},i={require:Promise.resolve(r)};self.define=(r,s,c)=>{i[r]||(i[r]=Promise.resolve().then((()=>{let i={};const o={uri:location.origin+r.slice(1)};return Promise.all(s.map((r=>{switch(r){case"exports":return i;case"module":return o;default:return e(r)}}))).then((e=>{const r=c(...e);return i.default||(i.default=r),i}))})))}}define("./sw.js",["./workbox-598b08a7"],(function(e){"use strict";self.addEventListener("message",(e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()})),e.precacheAndRoute([{url:"icon/fox-icon.png",revision:"3c1c35d4bb5d62fda15295f44cf6c625"},{url:"images/_fox5.jpg",revision:"f44ffb87d9196cacc0a2f736f7ec20c2"},{url:"images/fox1.jpg",revision:"dc9b92009c77b671eb1ef5f704d3966b"},{url:"images/fox2.jpg",revision:"6e39676f14d7d52d078eb859ac8421e3"},{url:"images/fox3.jpg",revision:"d5d076779f7a12703c24b844d5c80531"},{url:"images/fox4.jpg",revision:"ee460db230d1d9cd381a70e5bf686e8c"},{url:"images/fox5.jpg",revision:"513a82dfe298890c87263cc11264514e"},{url:"index.html",revision:"a0bce00e9bd3ddd2bd6169f31e811339"},{url:"index.js",revision:"f6e9c9454229f7f59db690733c1a215d"},{url:"manifest.webmanifest",revision:"47133b621b8a0a41eb5a73d534a38432"},{url:"style.css",revision:"f22611cb9f9a0739af6a7e8762c92ac8"}],{ignoreURLParametersMatching:[/^utm_/,/^fbclid$/]})}));
-//# sourceMappingURL=sw.js.map
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('video-store').then(function(cache) {
+     return cache.addAll([
+       './',
+       './index.html',
+       './index.js',
+       './style.css',
+       './images/fox1.jpg',
+       './images/fox2.jpg',
+       './images/fox3.jpg',
+       './images/fox4.jpg',
+       './images/fox5.jpg'
+     ]);
+   })
+ );
+});
+
+self.addEventListener('fetch', function(e) {
+  // console.log(e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
+});
+
+addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
